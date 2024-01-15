@@ -33,8 +33,8 @@ def import_data(file_num_list):
     for i in file_num_list:
         with open("data/verbs/verb" + i + ".txt", "r") as f:
             for line in f.readlines():
-                a = line.split()
-                data.append([a.pop(0), a.pop(0), a.pop(0), a.pop(0), " ".join(a)])
+                a = line.split("^")
+                data.append(a)
     random.shuffle(data)
 ###########################################
 
@@ -115,4 +115,4 @@ def add_voca():
     return render_template("add_voca.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port="8080", debug=True)
