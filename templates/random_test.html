@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random_Test</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/random_test.css') }}" />
+</head>
+<body>
+    <div class="home">
+        <form action="select_file" method="post">
+            <button class="button-4">Home</button>
+        </form>
+        
+    </div>
+    
+    <div class="outer">
+        <div class="prob"><h>{{KR}}</h></div>
+        <div>
+            <form action="random_test" method="post">
+                <div class="form_group">
+                    <input type="text" class="form_input" placeholder="Type here..." id="user_input" name="user_input" autofocus="autofocus" />
+                </div>
+            </form>
+        </div>
+        <div class="hint">
+            <a href="#hint">Hint</a>
+            <div id="hint">
+                <p>{{hint}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
